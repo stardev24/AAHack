@@ -1,0 +1,67 @@
+<div class="container" ng-repeat="thing in $ctrl.bookings">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="text-center">
+                
+                <h2>Booking Details</h2>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-xs-12 col-md-3 col-lg-3 pull-left">
+                    <div class="panel panel-default height">
+                        <div class="panel-heading"><strong>Booking Status<strong></div>
+                        <div class="panel-body">
+                            <strong>{{thing.BookingStatus}}</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-3 col-lg-3">
+                    <div class="panel panel-default height">
+                        <div class="panel-heading"><strong>PNR Status<strong></div>
+                        <div class="panel-body">
+                            <strong>{{thing.PNR}}</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-3 col-lg-3">
+                    <div class="panel panel-default height">
+                        <div class="panel-heading">Contact Details</div>
+                        <div class="panel-body">
+                           Email : <strong>{{thing.BookingContacts.BookingContact[0].EmailAddress}}</strong><br/>
+                           Phone : <strong>{{thing.BookingContacts.BookingContact[0].HomePhone}}</strong>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="container">
+        <div class="row">
+        <div class="col-xs-12">
+            <div class="text-center">
+                
+                <h2>Passanger Details</h2>
+            </div>
+            <hr>
+			  <table class="table table-condensed">
+			    <thead>
+			      <tr>
+			        <th>Infant</th>
+			        <th>Fee</th>
+			        <th>Other</th>
+			      </tr>
+			    </thead>
+			    <tbody ng-repeat="thing in $ctrl.passangers">
+			      <tr>
+			        <td>{{thing.Infant}}</td>
+			        <td>{{thing.PassengerFees}}</td>
+			        <td>{{thing.PaxPriceType.PaxType}}</td>
+			      </tr>
+			    </tbody>
+			  </table>
+        </div>
+    </div>
+</div>
