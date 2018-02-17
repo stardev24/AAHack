@@ -5,7 +5,7 @@ const uiRouter = require('angular-ui-router');
 
 import routes from './bookings.routes';
 
-export class BookingsComponent {
+export class BookingsController {
   $http;
   socket;
   bookings = [];
@@ -27,10 +27,10 @@ export class BookingsComponent {
   }
 }
 
-export default angular.module('appApp.bookings', [uiRouter])
+export default angular.module('airAsiaAssignmentApp.bookings', [uiRouter])
   .config(routes)
   .component('bookings', {
     template: require('./bookings.html'),
-    controller: BookingsComponent
-  }).controller('BookingsComponent', BookingsComponent)
+    controller: BookingsController
+  }).controller('BookingsController',BookingsController)
   .name;

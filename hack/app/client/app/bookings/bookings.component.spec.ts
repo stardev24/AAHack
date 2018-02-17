@@ -2,7 +2,7 @@
 
 describe('Component: BookingsComponent', function() {
   // load the controller's module
-  beforeEach(module('appApp.bookings'));
+  beforeEach(module('airAsiaAssignmentApp.bookings'));
 
   var BookingsComponent;
 

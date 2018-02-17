@@ -35,12 +35,6 @@ export default function routes($stateProvider) {
         controllerAs: 'vm',
         authenticate: true
       })
-      .state('bookings', {
-        url: '/bookings',
-        template: require('./bookings/mybookings.html'),
-        controller: 'BookingController',
-        controllerAs: 'vm',
-        authenticate: true
-      });
+
 }
 

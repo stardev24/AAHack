@@ -10,6 +10,7 @@ mongoose.Promise = require('bluebird');
 import config from './config/environment';
 import http from 'http';
 import seedDatabaseIfNeeded from './config/seed';
+import request from 'request'
 
 // Connect to MongoDB
 mongoose.connect(config.mongo.uri, config.mongo.options);
@@ -20,6 +21,15 @@ mongoose.connection.on('error', function(err) {
 
 // Setup server
 var app = express();
+app.get("/data/testing",function(req,res){
+	let mongoDataUrl = "https://api.mlab.com/api/1/databases/passanger/collections/passanger_details?apiKey=lnns9ZsrNRgq7odDP7WSAeFqwaToPRFl"
+	request(mongoDataUrl, function (error, response, body) {
+	  console.log('error:', error); // Print the error if one occurred
+	  console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
+	  console.log('body:', body); // Print the HTML for the Google homepage.
+	  res.send({data:body})
+	});
+})
 var server = http.createServer(app);
 var socketio = require('socket.io')(server, {
   serveClient: config.env !== 'production',

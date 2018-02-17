@@ -24,6 +24,7 @@ import main from './main/main.component';
 import constants from './app.constants';
 import util from '../components/util/util.module';
 import socket from '../components/socket/socket.service';
+import BookingsController from './bookings/bookings.component';
 
 
 import './app.css';
@@ -47,7 +48,8 @@ angular.module('airAsiaAssignmentApp', [
   main,
   constants,
   socket,
-  util
+  util,
+  BookingsController
 ])
   .config(routeConfig)
   .run(function($rootScope, $location, Auth) {
